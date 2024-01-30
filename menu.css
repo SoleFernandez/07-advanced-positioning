@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+body {
+    height: 1200;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: #5d6063;
+}
+
+a:link,
+a:visited {
+    color: #5d6063;
+    text-decoration: none;
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 50px;
+    background: #d6e9fe;
+}
+
+.menu {
+    margin-top: 15px;
+    
+}
+
+.menu > li {
+    display: inline;
+    margin-right: 50px;
+    
+}
+
+.menu > li:last-of-type {
+    margin-right: 0;
+}
+
+/* We need to change our existing .features-menu rule to only show the submenu when the user hovers over it by adding a :hover descendant selector.  */
+.dropdown:hover .features-menu {
+    display: flex;
+    flex-direction: column;
+    background: #b2d6ff;
+    border-radius: 5px;
+    padding-top: 60px;
+
+    position: absolute;
+    top: -25px;
+    left: -30px;
+   z-index: 1;
+}
+
+.features-menu li {
+    list-style: none;
+    border-bottom: 1px solid #fff;
+
+    padding: 0 40px 10px 20px;
+    margin: 10px;
+    
+}
+
+.dropdown {
+    position: relative;
+    
+}
+
+.features-menu li:last-of-type {
+    border-bottom: none;
+    
+}
+
+.dropdown > span {
+    z-index: 2;
+    position: relative;  /* This is important  */
+    /* Take note of that position: relative; line. It’s required because only positioned elements pay attention to their z-index property. */
+
+    cursor: pointer;
+}
+
+.features-menu {
+    /* We need to initially hide the submenu using the display property. */
+    display: none;
+}
+
+/* First, we created the semantic structure we wanted. Then, we wrote some fancy CSS to position the boxes right where we wanted them. Whenever you’re looking at a complicated mockup and not sure where to start, this is good way to approach the problem. */

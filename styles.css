@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 1200px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.example {
+    display: flex;
+    justify-content: space-around;
+
+    /* The explicit height on the <body> element, which will let us scroll up and down the page to demonstration different positioning behaviors. */
+
+    width: 800px;
+    margin: 50px 0;
+    background-color: #d6e9fe;
+}
+
+.item img {
+    display: block;
+}
+
+/* When an element’s position property doesn’t have a value of static, it’s called a “positioned element”. */
+
+/* This is useful for nudging boxes around when the default flow is just a little bit off. */
+
+.item-relative {
+    position: relative;
+    /* top: 30px;
+    left: 30px; */
+    bottom: 30px;
+    left: -30px;  /* These properties accept negative values, which means there’s two ways to specify the same offset. */
+}
+
+/* “Absolute positioning” is just like relative positioning, but the offset is relative to the entire browser window instead of the original position of the element. */
+
+.item-absolute {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+/* Coordinates for absolute elements are always relative to the closest container that is a positioned element. It only falls back to being relative to the browser when none of its ancestors are positioned. */
+.absolute {
+    position: relative;
+}
+
+/* “Fixed positioning” has a lot in common with absolute positioning: it’s very manual, the element is removed from the normal flow of the page, and the coordinate system is relative to the entire browser window. The key difference is that fixed elements don’t scroll with the rest of the page. */
+
+.item-fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
